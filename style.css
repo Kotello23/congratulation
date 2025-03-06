@@ -46,7 +46,6 @@ body {
 }
 
 #message {
-    display: none;
     margin-top: 20px;
     font-size: 60px;
     color: #28a745;
