@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отгадай пароль</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Введи пароль, чтобы получить подарок!</h1>
+    <input type="password" id="passwordInput" placeholder="Введите пароль">
+    <button onclick="checkPassword()">Проверить</button>
+
+    <div id="hidden-content">
+        <h2>Алиса, поздравляем тебя с твоим днем рождения! В этот замечательный день мы хотим пожелать тебе счастья, здоровья, сил, исполнения мечт и всего самого наилучшего! С днем рождения!!!</h2>
+        <p>Напиши (кому-то из нас) для встречи, для получения подарка!</p>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const correctPassword = "7 марта";
+            const userInput = document.getElementById("passwordInput").value;
+
+            if (userInput === correctPassword) {
+                document.getElementById("hidden-content").style.display = "block";
+            } else {
+                alert("Неверный пароль! Попробуй еще раз.");
+            }
+        }
+    </script>
+</body>
+</html>
