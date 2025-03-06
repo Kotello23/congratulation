@@ -11,7 +11,6 @@ submitButton.addEventListener("click", () => {
 
     if (userInput === correctPassword) {
         // Если пароль правильный, показываем сообщение
-        passwordContainer.style.display = "none";
         message.style.display = "block";
     } else {
         // Если пароль неверный, показываем предупреждение
