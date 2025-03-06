@@ -6,6 +6,12 @@ const submitButton = document.getElementById("submit-button");
 const message = document.getElementById("message");
 const passwordContainer = document.getElementById("password-container");
 
+if (!passwordInput || !submitButton || !message || !passwordContainer) {
+    console.error("Один из элементов не найден!");
+} else {
+    console.log("Все элементы найдены!");
+}
+
 // Обработчик нажатия на кнопку
 submitButton.addEventListener("click", () => {
     const userInput = passwordInput.value;
