@@ -1,4 +1,4 @@
-const correctPassword = "7 марта";
+const correctPassword = "123";
 
 // Элементы DOM
 const passwordInput = document.getElementById("password-input");
@@ -13,7 +13,7 @@ submitButton.addEventListener("click", () => {
     if (userInput === correctPassword) {
         // Если пароль правильный, скрываем контейнер и показываем сообщение
         passwordContainer.style.display = "none";
-        message.style.display = "inline";
+        message.style.display = "block";
     } else {
         // Если пароль неверный, показываем предупреждение
         alert("Неверный пароль! Попробуйте еще раз.");
