@@ -1,26 +1,29 @@
-const correctPassword = "123";
+document.addEventListener("DOMContentLoaded", () => {
+    const passwordInput = document.getElementById("password-input");
+    const submitButton = document.getElementById("submit-button");
+    const message = document.getElementById("message");
 
-// Элементы DOM
-const passwordInput = document.getElementById("password-input");
-const submitButton = document.getElementById("submit-button");
-const message = document.getElementById("message");
-
-// Обработчик нажатия на кнопку
-submitButton.addEventListener("click", () => {
-    const userInput = passwordInput.value;
-
-    if (userInput === correctPassword) {
-        // Если пароль правильный, показываем сообщение
-        message.style.display = "block";
+    if (!passwordInput || !submitButton || !message) {
+        console.error("Один из элементов не найден!");
     } else {
-        // Если пароль неверный, показываем предупреждение
-        alert("Неверный пароль! Попробуйте еще раз.");
-    }
-});
+        console.log("Все элементы найдены!");
 
-// Обработчик нажатия Enter в поле ввода
-passwordInput.addEventListener("keypress", (event) => {
-    if (event.key === "Enter") {
-        submitButton.click(); // Выполняем действие кнопки
+        const correctPassword = "пароль123";
+
+        submitButton.addEventListener("click", () => {
+            const userInput = passwordInput.value;
+
+            if (userInput === correctPassword) {
+                message.style.display = "block";
+            } else {
+                alert("Неверный пароль! Попробуйте еще раз.");
+            }
+        });
+
+        passwordInput.addEventListener("keypress", (event) => {
+            if (event.key === "Enter") {
+                submitButton.click();
+            }
+        });
     }
 });
