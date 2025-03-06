@@ -8,6 +8,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    flex-direction: column;
 }
 
 #password-container {
@@ -46,7 +47,8 @@ body {
 }
 
 #message {
+    display: none;
     margin-top: 20px;
-    font-size: 60px;
+    font-size: 20px;
     color: #28a745;
 }
