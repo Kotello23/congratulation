@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         console.log("Все элементы найдены!");
 
-        const correctPassword = "Алиса";
+        const correctPassword = "Гойда";
 
         submitButton.addEventListener("click", () => {
             const userInput = passwordInput.value;
