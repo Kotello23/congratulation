@@ -1,32 +1,54 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Отгадай пароль</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <h1>Введи пароль, чтобы получить подарок!</h1>
-    <input type="password" id="passwordInput" placeholder="Введите пароль">
-    <button onclick="checkPassword()">Проверить</button>
 
-    <div id="hidden-content">
-        <h2>Алиса, поздравляем тебя с твоим днем рождения! В этот замечательный день мы хотим пожелать тебе счастья, здоровья, сил, исполнения мечт и всего самого наилучшего! С днем рождения!!!</h2>
-        <p>Напиши (кому-то из нас) для встречи, для получения подарка!</p>
+<body>
+    <div id="password-container">
+        <h1>Введи пароль, чтобы получить подарок!</h1>
+        <input type="password" id="password-input" placeholder="Пароль">
+        <button id="submit-button">Проверить</button>
+        <div id="message">Алиса, поздравляем тебя с твоим днем рождения! В этот замечательный день мы хотим пожелать
+            тебе счастья, здоровья, сил, исполнения мечт и всего самого наилучшего! С днем рождения!!!</div>
+        <div id="message-2">Напиши (кому-то из нас) для встречи, для получения подарка!</div>
     </div>
 
     <script>
-        function checkPassword() {
-            const correctPassword = "7 марта";
-            const userInput = document.getElementById("passwordInput").value;
+        // Правильный пароль
+        const correctPassword = "пароль123";
+
+        // Элементы DOM
+        const passwordInput = document.getElementById("password-input");
+        const submitButton = document.getElementById("submit-button");
+        const message = document.getElementById("message");
+        const passwordContainer = document.getElementById("password-container");
+
+        // Обработчик нажатия на кнопку
+        submitButton.addEventListener("click", () => {
+            const userInput = passwordInput.value;
 
             if (userInput === correctPassword) {
-                document.getElementById("hidden-content").style.display = "block";
+                // Если пароль правильный, скрываем контейнер и показываем сообщение
+                passwordContainer.style.display = "none";
+                message.style.display = "block";
             } else {
-                alert("Неверный пароль! Попробуй еще раз.");
+                // Если пароль неверный, показываем предупреждение
+                alert("Неверный пароль! Попробуйте еще раз.");
             }
-        }
+        });
+
+        // Обработчик нажатия Enter в поле ввода
+        passwordInput.addEventListener("keypress", (event) => {
+            if (event.key === "Enter") {
+                submitButton.click(); // Выполняем действие кнопки
+            }
+        });
     </script>
 </body>
+
 </html>
